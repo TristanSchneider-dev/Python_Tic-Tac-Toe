@@ -100,10 +100,6 @@ def check_state(board):
         [0, 4, 8], [2, 4, 6]  # diagonal
     ]
 
-    if "" not in board:
-        print("Draw, there's no winner.")
-        return True
-
     for combo in winning_combinations:
         if all(board[i] == "X" for i in combo):
             print("X is the winner!")
@@ -111,7 +107,11 @@ def check_state(board):
         elif all(board[i] == "O" for i in combo):
             print("O is the winner!")
             return True
-
+   
+    if "" not in board:
+        print("Draw, there's no winner.")
+        return True
+        
     return False
 
 
