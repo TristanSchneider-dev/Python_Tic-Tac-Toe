@@ -122,11 +122,15 @@ def switch_current():
     else:
         current_player = "X"
 
-#START
-init_game()
-while not check_state(board):
-    if current_player == player:
-        player_move(board)
-    else:
-        com_move(board)
-input()
+
+def game():
+    init_game()
+    while not check_state(board):
+        if current_player == player:
+            player_move(board)
+        else:
+            com_move(board)
+    input()
+
+if __name__ == "__main__":
+    game()
